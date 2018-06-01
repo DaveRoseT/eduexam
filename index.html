@@ -1,0 +1,619 @@
+<html class=" XL"><head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit"><!--用在360中-->
+  <meta name="force-rendering" content="webkit"><!--用在其它-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>初中-数学-手动搜题</title>
+  <link rel="stylesheet" href="css/base.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/popup.min.css">
+  <link rel="stylesheet" href="lib/layui/css/layui.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="js/zu.js"></script>
+  <link rel="stylesheet" href="css/spriter-mix.min.css">
+
+</head>
+<body class="f-usn">
+<!--[if lt IE 7]>
+<link href="//static.21cnjy.com/kill-ie/kill-ie.css" rel="stylesheet" type="textcss">
+<![endif]-->
+<link rel="stylesheet" href="css/manual.min.css">
+<!--[if IE 9]>
+<script src="//static.21cnjy.comjs/html5shiv.min.js"></script>
+<![endif]-->
+
+<!--顶部导航开始-->
+<div class="topbox">
+  <div class="topinner g-container">
+    <style>
+      .user-news { position: absolute; top: 40px; right: 0; background: #fefefe; width: 260px; min-height: 112px;  line-height: 24px;   border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-shadow: 0 0 10px #dcdcdc; display: none; }
+      .user-news-hd { border-bottom: 1px solid #efefef; padding-bottom: 4px; margin: 6px 10px; font-size: 12px; color:#666; }
+      .user-news .icon { display: block; top: -8px; right: 40px; position: absolute; }
+      .user-news-close { position: absolute; right: 10px; top: 10px; width: 16px; height: 16px; }
+      .user-news-close img { width: 100%; height: 100%;}
+      .vip-overtip {text-align: center; }
+      .vip-overtip { padding-top: 6px;}
+      .vip-overtip p strong { color: red; margin:0 3px; }
+      .vip-overtip .tip-notice { color: red; font-size: 16px; font-weight: bold; }
+      .vip-overtip a { color: #52c684; }
+      .layui-form-checkbox{display: inline-block}
+      .layui-form-checkbox span{height: auto}
+      .layui-form-checkbox[lay-skin=primary] i{display: none;}
+    </style>
+    <div class="slogan">
+
+      <a href="javascript:;">二一教育旗下产品</a>
+
+    </div>
+
+    <div class="user f-fr f-pr topbar-dropmap">
+      <a href="javascript:;"></i></a>
+      <div class="drop-bd">
+        <ul>
+          <li><a href="javascript:;">下载记录</a></li>
+          <li><a href="javascript:;">组卷记录</a></li>
+          <li><a href="javascript:;">测试记录</a></li>
+          <li><a href="javascript:;">我的收藏</a></li>
+          <li><a href="javascript:;">错题本</a></li>
+
+        </ul>
+        <span class="icona-dia-tri"></span>
+      </div>
+    </div>
+    <div class="user f-fr"><a href="javascript:;"></i>消息<span>(0)</span></a></div>
+    <div class="webhelp">
+      <!--<a href="javascript:;"></i>网站首页</a>-->
+      <!--<span class="split"></span>-->
+      <!--<a href="javascript:;">【返回旧版】</a>-->
+      <!--<span class="split"></span>-->
+      <a href="javascript:;"></i>帮助中心</a>
+      <span class="split"></span>
+      <a href="javascript:;"></i>购买VIP</a>
+      <span class="split"></span>
+      <a href="javascript:;"></i>申请试用</a>
+      <span class="split"></span>
+      <a href="javascript:;"></i>激活VIP</a>
+      <span class="split"></span>
+      <span class="topbar-dropmap">
+                <a href="javascript:;"></i>旗下站点</a>
+                <div class="drop-bd">
+                    <ul>
+                        <!--<li><a target="_blank" href="">校网通</a></li>-->
+                        <!--<li><a target="_blank" href="http://zujuan.21cnjy.com/">在线组卷</a></li>-->
+                        <!--<li><a target="_blank" href="http://www.jbzyk.com/">校本资源库</a></li>-->
+                        <!--<li><a target="_blank" href="http://tiku.21cnjy.com/">在线题库</a></li>-->
+                        <!--<li><a target="_blank" href="http://www.21cnjy.com/video.php">名师课堂</a></li>-->
+                        <!--<li><a target="_blank" href="http://www.21cnjy.com/productshow/index.php?prod=school">数字化校园</a></li>-->
+                        <!--<li><a target="_blank" href="http://www.21cnjy.com/productshow/index.php?prod=yun">区域云平台</a></li>-->
+                        <!--<li><a target="_blank" href="http://www.21cnjy.com/productshow/app/">二一教育APP</a></li>-->
+                    </ul>
+                    <span class="icona-dia-tri"></span>
+                </div>
+            </span>
+      <span class="split"></span>
+    </div>
+
+
+
+  </div>
+</div>
+<!--顶部导航结束-->
+<!--头部搜索部分开始-->
+<div class="top-middle">
+  <div class="top-minner g-container f-cb">
+    <div class="logobox">
+      <a href="javascript:;">
+        <img src="images/test_logo.png" alt="二一教育在线组卷平台" title="在线组卷平台"></a>
+    </div>
+    <div class="g-mn">
+      <div class="searchbox">
+        <form id="search-form" action="/question/search" method="get">                    <div class="search-text" id="J_SearchMenu">
+          <span class="text-select"><em class="J_tit">试题</em><i class="icona-tri"></i></span>
+          <p class="select-items">
+            <a href="javascript:;"><span>试题</span></a>
+            <a href="javascript:;"><span>试卷</span></a>
+          </p>
+        </div>
+          <div class="search-inputbox">
+            <input type="text" name="content" value="" class="search-input" placeholder="请输入关键词搜索 初中数学 资源">
+          </div>
+          <div class="search-btn">
+            <button class="btn" type="submit"><i class="icona-search"></i></button>
+          </div>
+        </form>
+        <script>
+          $(function(){
+            var name = $(".nav-items a.item span").html();
+            $("input[name='content']").attr({
+              'placeholder':'请输入关键词搜索 '+name+' 资源'
+            });
+          })
+        </script>
+      </div>
+    </div>
+    <div class="contactbox">
+      <a class="link-into" href="/payment/vip" target="_blank"><img src="images/VIP.gif"><strong>购买VIP</strong></a>
+      <a class="link-into" href="/help/request" target="_blank"><img src="images/xwt.gif"><strong>开通学校服务</strong></a>
+    </div>
+  </div>
+</div>
+<!--头部搜索部分结束--><!--头部导航部分开始-->
+
+<div class="top-navbox">
+  <div class="top-nav g-container">
+    <div class="nav-items">
+      <a href="javascript:;"></i></a>
+      <div class="item-list">
+        <div class="list-xx">
+          <h3>小学</h3>
+          <a href="javascript:;">政治思品</a>                                    </div>
+        <div class="list-cz">
+          <h3>初中</h3>
+          <a href="javascript:;">生物</a>                                    </div>
+        <div class="list-gz">
+          <h3>高中</h3>
+          <a href="javascript:;">信息技术</a>                                    </div>
+      </div>
+    </div>
+    <div class="nav-list">
+      <ul>
+        <li>
+          <a class="" href="/">首页</a>                </li>
+        <li class="complex-nav-item">
+          <a href="javascript:;">手动组卷</a>
+          <div class="dd-list">
+            <a href="javascript:;"><i>章节同步选题</i></a>
+            <a href="javascript:;"><i>知识点选题</i></a>
+          </div>
+        </li>
+        <li class="complex-nav-item">
+          <a href="javascript:;">智能组卷</a>
+          <div class="dd-list">
+            <a href="javascript:;"><i>章节智能组卷</i></a>
+            <a href="javascript:;"><i>知识点智能组卷</i></a>
+            <a href="javascript:;"><i>双向细目表组卷</i></a>
+          </div>
+        </li>
+        <li class="complex-nav-item">
+          <a class="" href="javascript:;" onclick=" return true;">试卷库</a>                    <div class="dd-list">
+          <a href="javascript:;"><i>同步试卷</i></a>
+          <a href="javascript:;"><i>测试试卷</i></a>
+          <a href="javascript:;"><i>真卷&amp;模拟卷</i></a>
+        </div>
+        </li>
+        <li>
+          <a class="" href="/subject" onclick=" return true;">专题特供</a>                </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--头部导航部分结束--><!--头部结束-->
+  <div class="breadcrumb g-container">
+    <i class="icona-dingwei"></i>当前位置：
+    <a href="javascript:;">初中数学</a>    </div>
+  <div class="search-type d-search-type g-container">
+    <div class="type-items">
+      <div class="type-tit">教材：</div>
+      <div class="type-conbox">
+        <div class="type-con">
+          <div class="con-items">
+            <a href="javascript:;">人教版</a>
+            <a href="javascript:;">北师大版</a>
+            <a href="javascript:;">浙教版</a>
+            <a href="javascript:;">华师大版</a>
+            <a href="javascript:;">苏科版</a>
+            <a href="javascript:;">沪教版</a>
+            <a href="javascript:;">湘教版</a>
+            <a href="javascript:;">冀教版</a>
+            <a href="javascript:;">鲁教版（五四制）</a>
+            <a href="javascript:;">北京课改版</a>
+            <a href="javascript:;">沪科版</a>
+            <a href="javascript:;">人教五四学制版</a>
+            <a href="javascript:;">青岛版</a>
+          </div>
+          <span class="show-more">更多<i></i></span></div>
+      </div>
+    </div>
+    <div class="type-items">
+      <div class="type-tit">年级：</div>
+      <div class="type-conbox">
+        <div class="type-con">
+          <div class="con-items">
+            <a href="javascript:;">七年级上册</a>
+            <a href="javascript:;">七年级下册</a>
+            <a href="javascript:;">八年级上册</a>
+            <a href="javascript:;">八年级下册</a>
+            <a href="javascript:;">九年级上册</a>
+            <a href="javascript:;">九年级下册</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="categories" value="10166">
+
+  <div class="g-container f-cb">
+    <div class="g-sd1">
+      <div class="chapter-con f-usn" onselectstart="return false">
+        <h1>
+          选择章节
+        </h1>
+
+          <form class="layui-form">
+           <div id="xtree1" class="xtree_contianer"></div>
+          </form>
+
+      </div>
+    </div>
+
+    <div class="g-mn1">
+      <div class="g-mn1c">
+        <div class="tag-type f-cb">
+          <div class="tag-items f-cb">
+            <div class="tag-tit">
+              题型：
+            </div>
+            <div class="tag-conbox">
+              <div class="tag-con">
+                <div class="con-items">
+                  <input type="hidden" name="question_channel_type" value="">
+                  <a data-name="question_channel_type" data-value="" href="javascript:;" class="type-active">全部</a>
+                  <a data-name="question_channel_type" data-value="1" href="javascript:;">单选题</a>
+                  <a data-name="question_channel_type" data-value="4" href="javascript:;">填空题</a>
+                  <a data-name="question_channel_type" data-value="5" href="javascript:;">计算题</a>
+                  <a data-name="question_channel_type" data-value="6" href="javascript:;">解答题</a>
+                  <a data-name="question_channel_type" data-value="25" href="javascript:;">作图题</a>
+                  <a data-name="question_channel_type" data-value="28" href="javascript:;">综合题</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tag-items f-cb">
+            <div class="tag-tit">难易程度：</div>
+            <div class="tag-conbox">
+              <div class="tag-con">
+                <div class="con-items">
+                  <input type="hidden" name="difficult_index" value="">
+                  <a data-name="difficult_index" data-value="" href="javascript:;" class="type-active">全部</a>
+                  <a data-name="difficult_index" data-value="1" href="javascript:;">容易</a>
+                  <a data-name="difficult_index" data-value="3" href="javascript:;">普通</a>
+                  <a data-name="difficult_index" data-value="5" href="javascript:;">困难</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tag-items f-cb">
+            <div class="tag-tit">题类筛选：</div>
+            <div class="tag-conbox">
+              <div class="tag-con">
+                <div class="con-items">
+                  <input type="hidden" name="exam_type" value="">
+                  <a data-name="exam_type" data-value="" href="javascript:;" class="type-active">全部</a>
+                  <a data-name="exam_type" data-value="1" href="javascript:;">中考真题</a>
+                  <a data-name="exam_type" data-value="2" href="javascript:;">常考题</a>
+                  <a data-name="exam_type" data-value="7" href="javascript:;">模拟题</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--
+                  <div class="tag-items f-cb">
+                  <div class="tag-tit">试题筛选：</div>
+                  <div class="tag-conbox">
+                          <div class="tag-con">
+                                  <a href="javascript:;">全部</a>
+                                  <a href="javascript:;">普通试题</a>
+                                  <a href="javascript:;">精品试题</a>
+                          </div>
+                  </div>
+          </div>
+          -->
+          <div class="tag-items f-cb">
+            <div class="tag-tit">知识点个数：</div>
+            <div class="tag-conbox">
+              <div class="tag-con">
+                <div class="con-items">
+                  <input type="hidden" name="kid_num" value="">
+                  <a data-name="kid_num" data-value="" href="javascript:;" class="type-active">全部</a>
+                  <a data-name="kid_num" data-value="1" href="javascript:;">1个知识点</a>
+                  <a data-name="kid_num" data-value="2" href="javascript:;">2个知识点</a>
+                  <a data-name="kid_num" data-value="3" href="javascript:;">多个知识点</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <style>
+            #J_Nj span {
+              cursor: pointer;
+              display: inline-block;
+              height: 20px;
+              line-height: 20px;
+              margin: 8px;
+              padding: 0 4px;
+            }
+            #J_NjError {
+              color: red;
+              display: none;
+              font-size: 12px;
+              font-weight: 400;
+              margin-left: 5px;
+            }
+          </style>
+          <div class="tag-items f-cb">
+            <div class="tag-tit">适用年级：</div>
+            <div class="tag-conbox">
+              <div class="tag-con">
+                <input type="hidden" name="grade_id[]" checked="" value="0">
+                <div id="J_Nj" class="q-set f-usn">
+                                                                    <span class="checkbox checked">
+                                    <i class="icona-check"></i>
+                                    <input type="checkbox" name="grade_id[]" checked="" value="7" style="display:none">七年级                                    </span>
+
+                  <span class="checkbox checked">
+                                    <i class="icona-check"></i>
+                                    <input type="checkbox" name="grade_id[]" checked="" value="8" style="display:none">八年级                                    </span>
+
+                  <span class="checkbox checked">
+                                    <i class="icona-check"></i>
+                                    <input type="checkbox" name="grade_id[]" checked="" value="9" style="display:none">九年级                                    </span>
+
+                  <em id="J_NjError" style="display:none ">*适用年级至少选择一个！</em>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sort">
+          <div class="sort-left">
+            <input type="hidden" name="sortField" value="time">
+            排序：
+            <a href="javascript:;" id="sort-time" class="time sort-active">时间<i class="icona-sort3"></i></a>
+            <a href="javascript:;" id="sort-count" class="count">组卷次数<i class="icona-down"></i></a>
+          </div>
+          <div class="switch-detail f-fl">
+            <!--                    <a class="checkbox" id="deleteUseQid">过滤已使用试题</a>-->
+            <span class="deleteUseQid" title="过滤掉您半年内使用过的试题">
+                        <input type="hidden" name="filterquestion" value="0">
+                        <i class="icona-check"></i>
+                        <input type="checkbox" name="" value="0" style="display:none">
+                         过滤已使用的试题
+                    </span>
+          </div>
+          <a class="select-btn" href="javascript:;" onclick="QList.addAllToBasket()">选择本页全部试题</a>
+          <div class="total">
+            共计：<b>35442</b>题
+          </div>
+        </div>
+        <div class="search-list">
+          <ul id="J_QuestionList"><li data-qid="7369387">
+            <div class="search-exam">
+              <div class="exam-head">
+                <p class="exam-head-left">
+                  <span>题型：单选题</span><i class="line"></i>
+                  <span>题类：模拟题</span><i class="line"></i>
+                  <span>难易度：普通</span>
+                </p>
+                <p class="exam-head-right">
+                  <span>试题来源：<a href="javascript:;">广东省东莞市寮步宏伟初级中学2018届数学中考一模试卷</a></span>
+                </p>
+              </div><div class="exam-con">
+
+              <div class="exam-q">
+                1. -2的绝对值是（ &nbsp;&nbsp;）．
+              </div>
+
+              <div class="exam-s">
+
+                <span class="op-item" style="width: 220px; margin-right: 0px; height: 28px; clear: none;"><span class="op-item-nut" style="margin-top: 2px;">A . </span><span class="op-item-meat" style="margin-top: 2px;">-2</span></span>
+
+                <span class="op-item" style="width: 220px; margin-right: 0px; height: 28px; clear: none;"><span class="op-item-nut" style="margin-top: 2px;">B . </span><span class="op-item-meat" style="margin-top: 2px;">2</span></span>
+
+                <span class="op-item" style="width: 220px; margin-right: 0px; height: 28px; clear: none;"><span class="op-item-nut" style="margin-top: 2px;">C . </span><span class="op-item-meat" style="margin-top: 2px;">0</span></span>
+
+                <span class="op-item" style="width: 220px; margin-right: 0px; height: 28px; clear: none;"><span class="op-item-nut" style="margin-top: 2px;">D . </span><span class="op-item-meat" style="margin-top: 0px;"><img class="mathml" src="http://math.21cnjy.com/MathMLToImage?mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmrow%3E%3Cmfrac%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmn%3E2%3C%2Fmn%3E%3C%2Fmfrac%3E%3C%2Fmrow%3E%3C%2Fmath%3E&amp;key=086f64f23a813ae4d69aa4c1d340cb00" style="vertical-align: middle;" draggable="false"></span></span>
+
+              </div>
+
+
+
+
+            </div>
+              <div class="exam-foot">
+                <p class="exam-foot-left">
+                  <a target="_blank" href="/question/detail/7369387"><i class="icona-jiexi"></i>查看解析</a>
+                  <a href="javascript:;"></i>收藏</a>
+                  <a href="javascript:;"></i>纠错</a>
+                </p>
+                <p class="exam-foot-right">
+
+                  <span>组卷次数：144次</span>
+
+                  <a class="addbtn J_AddQuestion" href="javascript:;"><b>+</b>选题</a>
+
+                </p>
+              </div>
+            </div>
+          </li></ul>
+        </div>
+        <input type="hidden" name="page" value="1">
+        <div class="page">
+
+          <div class="pagenum">
+
+            <a data-page="1" href="javascript:;" class="current">1</a>
+            <a data-page="2" href="/question/index?tree_type=category&amp;chid=3&amp;xd=2&amp;page=2&amp;per-page=10">2</a>
+            <a data-page="3" href="/question/index?tree_type=category&amp;chid=3&amp;xd=2&amp;page=3&amp;per-page=10">3</a>
+            <a data-page="4" href="/question/index?tree_type=category&amp;chid=3&amp;xd=2&amp;page=4&amp;per-page=10">4</a>
+            <a data-page="5" href="/question/index?tree_type=category&amp;chid=3&amp;xd=2&amp;page=5&amp;per-page=10">5</a>
+
+            <a data-page="2" href="/question/index?tree_type=category&amp;chid=3&amp;xd=2&amp;page=2&amp;per-page=10">下一页</a>
+
+            <input style="
+                border: 1px solid #dcdcdc;
+                color: #333;
+                display: inline-block;
+                font-size: 12px;
+                height: 32px;
+                width: 30px;
+                line-height: 32px;
+                margin: 0 5px;
+                padding: 0 5px;
+                text-align: center;
+                white-space: nowrap;" name="page" onkeyup="toPaperNum(this)" type="text" value="1">
+            <button type="submit" id="paper-jump" class="current">跳转</button>
+            <script>
+              function toPaperNum(ob) {
+                var v = parseInt($.trim(ob.value).toString().replace(/\D/, '').substr(0, 4)) || 0;
+                ob.value = v ? v : '';
+              }
+            </script>
+          </div>
+        </div>
+        <div class="null-page" style="width:100%;text-align: center;color:#333;font-size: 14px;margin-top: 80px;  display:none; ">
+          <img src="images/blank.png"><br><br>
+          <span style="font-size: 16px; color: #666666; font-family:Microsoft YaHei">未搜索到相关数据!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="asf"></div>
+
+<!--试题篮-->
+
+<div class="basket active" id="J_Basket">
+  <div class="basket-tit">
+    <p><i class="icona-gouwulan"></i><em>试题篮</em></p>
+    <span><i class="icona-gouwuleft"></i></span>
+  </div>
+  <div class="basket-con">
+    <div class="basket-count"><div class="basket-head">
+      共计：（<span>10</span>）道题
+    </div>
+      <div class="baskrt-list">
+
+        <p title="单选题">单选题：<span>4</span>道<i class="icona-del1 f-fr" onclick="basket.removeAll('单选题', 2791066,3705533,4003917,5492191)"></i></p>
+
+        <p title="填空题">填空题：<span>6</span>道<i class="icona-del1 f-fr" onclick="basket.removeAll('填空题', 1482630,1553044,5492209,5492215,5492219,5492249)"></i></p>
+
+      </div></div>
+    <div class="basket-foot">
+      <a id="to-paper-admin-edit" data-method="post" class="basket-btn" href="/paper/admin-edit" style="display: none">编辑</a>
+      <a id="to-paper-edit" data-method="post" class="basket-btn" href="/paper/edit" style="">生成试卷</a>
+      <a id="to-paper-admin-cancel" class="basket-btn" shref="/question" style="display: none">取消</a>
+    </div>
+  </div>
+</div>
+
+<a class="return" href="javascript:;" style="right: 286px;"><i class="icona-top"></i></a>
+<script src="lib/layui/layui.js"></script>
+<script src="lib/layui-xtree/layui-xtree.js"></script>
+<script src="https://cdn.bootcss.com/template_js/0.7.1/template.min.js"></script>
+
+<script id="list" type="text/html">
+    <% for(var i = 0; i < list.length; i++) { %>
+    <li>
+      <div class="search-exam">
+        <div class="exam-head">
+          <p class="exam-head-left">
+            <span>题型：单选题</span><i class="line"></i>
+            <span>题类：模拟题</span><i class="line"></i>
+            <span>难易度：普通</span>
+          </p>
+          <p class="exam-head-right">
+            <span>试题来源：<a href="javascript:;"><%:=list.name %></a></span>
+          </p>
+        </div><div class="exam-con">
+
+        <div class="exam-q">
+          1. -2的绝对值是（ &nbsp;&nbsp;）．
+        </div>
+
+        <div class="exam-s">
+
+          <span class="op-item" style="width: 220px; margin-right: 0px; height: 28px; clear: none;"><span class="op-item-nut" style="margin-top: 2px;">A . </span><span class="op-item-meat" style="margin-top: 2px;">-2</span></span>
+
+          <span class="op-item" style="width: 220px; margin-right: 0px; height: 28px; clear: none;"><span class="op-item-nut" style="margin-top: 2px;">B . </span><span class="op-item-meat" style="margin-top: 2px;">2</span></span>
+
+          <span class="op-item" style="width: 220px; margin-right: 0px; height: 28px; clear: none;"><span class="op-item-nut" style="margin-top: 2px;">C . </span><span class="op-item-meat" style="margin-top: 2px;">0</span></span>
+
+          <span class="op-item" style="width: 220px; margin-right: 0px; height: 28px; clear: none;"><span class="op-item-nut" style="margin-top: 2px;">D . </span><span class="op-item-meat" style="margin-top: 0px;"><img class="mathml" src="http://math.21cnjy.com/MathMLToImage?mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmrow%3E%3Cmfrac%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmn%3E2%3C%2Fmn%3E%3C%2Fmfrac%3E%3C%2Fmrow%3E%3C%2Fmath%3E&amp;key=086f64f23a813ae4d69aa4c1d340cb00" style="vertical-align: middle;" draggable="false"></span></span>
+
+        </div>
+      </div>
+        <div class="exam-foot">
+          <p class="exam-foot-left">
+            <a target="_blank" href="/question/detail/7369387"><i class="icona-jiexi"></i>查看解析</a>
+
+          </p>
+          <p class="exam-foot-right">
+
+            <span>组卷次数：144次</span>
+
+            <a class="addbtn J_AddQuestion" href="javascript:;"><b>+</b>选题</a>
+
+          </p>
+        </div>
+      </div>
+    </li>
+    <%}%>
+</script>
+
+<script>
+  //一套json数据下面会使用，同时供你参考
+
+/*
+* 树
+* */
+  layui.use(['form'], function () {
+    var form = layui.form;
+    var xtree1 = new layuiXtree({
+      elem: 'xtree1'
+      , form: form
+      , data: "json/tree.json"
+      , isopen: false
+      , icon: {
+        open: "&#xe7a0;"
+        , close: "&#xe622;"
+        , end: "&#xe621;"
+      }
+      , color: {
+        open: "#EE9A00"
+        , close: "#EEC591"
+        , end: "#828282"
+      }
+    });
+
+  });
+  $("#J_Nj > span").click(function () {
+    if($(this).hasClass('checked')){
+      $(this).removeClass('checked');
+    }else{
+      $(this).addClass('checked');
+      $.ajax({
+        url:"json/list.json",
+        success:function(result){
+          var data = result.data[0].questions;
+
+          var html = template($("#list").html(), {list : data});
+          $("#J_QuestionList").html(html)
+          /*$.each(data,function (i,v) {
+            console.log(html)
+            $("#J_QuestionList").html(html)
+          })*/
+        },error:function(result){
+          console.log("错误信息:" + result)
+        }
+      });
+    }
+  });
+
+  // var tpl = document.getElementById('tpl').innerHTML;
+  // var html1 = template(tpl, {list: [{name: "yan"},{name: "haijing"}]});
+  // $("#asf").html(html1)
+</script>
+</body>
+</html>
